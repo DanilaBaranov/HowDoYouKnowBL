@@ -11,7 +11,7 @@ label goodname:
     "Проморгался, и начал осматриваться. Кресла, узкий проход…"
     th "Автобус! {w}Неужели получилось!? {w}От радости чуть не заорал, но вовремя одернул себя. Мне все-таки 19 лет, уже взрослый для такого проявления эмоций."
     stop music fadeout 5
-    th "И все же это правда, мне обещали день в Совенке, и похоже я его получил. {w}Ну, тогда не будем терять ни минуты!{w}"
+    th "И все же это правда, мне обещали день в Совенке, и похоже я его получил. {w}Ну, тогда не будем терять ни минуты!"
     
     play music music_list["forest_maiden"] fadein 5
     scene bg ext_camp_entrance_day with dissolve
@@ -102,10 +102,47 @@ label goodname:
     
 label map:
     $ disable_all_zones() 
-    $ set_zone ("clubs", "label_clubs")
-    $ set_zone ("library", "label_library")
-    $ set_zone ("music_club", "label_music_club")
+    $ set_zone ("clubs", "clubs")
+    $ set_zone ("library", "library")
+    $ set_zone ("music_club", "music_club")
     $ set_zone ("camp_entrance", "label_end")
     $ show_map()
+    
+label label_end:
+    scene bg ext_bus with dissolve
+    th "Наверное, с меня хватит."
+    "Вышел за ворота, где меня уже ожидал автобус."
+    sl "Уже уезжаешь?"
+    "Послышался за спиной грустный голос Слави."
+    "Развернулся, ожидая увидеть лишь её, но..."
+    play music music_list["goodbye_home_shores"] fadein 5
+    scene bg ext_camp_entrance_day with dissolve
+    show dv sad pioneer far at fleft with dspr
+    show un cry pioneer far at fright with dspr
+    show us sad sport at left with dspr
+    show mi sad pioneer at right with dspr
+    show sl sad pioneer at center with dspr
+    "Увидел всех девочек. {w}Они все выглядели расстроенными. {w}Даже Алиса не улыбалась, как обычно."
+    "Причем что-то мне подсказывало, что это не заученный сценарий. {w}Видимо я им действительно понравился за этот день, и они действительно расстроены моим уходом."
+    "Я переводил взгляд с одного кислого лица на другое. {w} Я четко видел, что каждая из них хотела что-то сказать, но слова не шли."
+    me "Я понимаю вас. Мне тоже не хочется уезжать, но что поделать.{w} Мне было приятно встретиться о всеми вами вживую, я никогда не забуду нашу встречу, и думаю, что вы тоже. {w}Если повезет, я выбью еще одну поездку. {w}Будете ждать?"
+    all "Конечно!" 
+    stop music fadeout 5
+    "Разом воскликнули все. Я даже опешил."
+    me "Ну тогда договорились."
+    show dv smile pioneer far at fleft with dspr
+    show un smile pioneer far at fright with dspr
+    show us smile sport at left with dspr
+    show mi smile pioneer at right with dspr
+    show sl smile pioneer at center with dspr
+    "Я улыбнулся и подмигнул девчёнкам. Они сразу приободрились."
+    all "Пока, Семен."
+    play music music_list["reflection_on_water"]
+    me "Не прощаюсь. Увидимся ещё!"
+    "Я заставил себя отвернуться и зайти в автобус, не оборачиваясь."
+    scene bg int_bus with dissolve2
+    "Сел на то же место, на котором сидел, когда приехал. {w}В окно смотреть не стал. {w}Еще сложнее уехжать будет. {w}Надеюсь они поймут и не обидятся."
+    th "Хороший был день. Один их лучших в жизни. Обязательно вернусь сюда. {w}{w}И возможно уже не на один день."
+    play music music_list["afterword"] fadein 3
     
     return
